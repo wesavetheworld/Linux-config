@@ -24,7 +24,7 @@ if(is_yes(input())):
     # install code goes here
     
     for file in os.listdir("home"):
-        shutil.copytree(os.path.join("home", file"), "~")
+        shutil.copytree(os.path.join("home", file), "~")
         
     # clean up the repo
     shutil.rmtree(".git")
