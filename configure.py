@@ -23,6 +23,7 @@ print("Do you wish to continue? (y/n)")
 if is_yes(input()):
     for file in os.listdir("home"):
         location = os.path.join("home", file)
+        print("moving " + location + " to ~")
         if os.path.isdir(location):
             shutil.copytree(location, "~")
             shutil.rmtree(location)
