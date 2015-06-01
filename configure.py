@@ -6,7 +6,7 @@ import shutil
 
 def is_yes(input):
     lower = input.lower()
-    return lower == "y" || lower == "yes"
+    return lower == "y" or lower == "yes"
     
 def move_recursive(source, destination):
     shutil.copytree(source, destination)
