@@ -20,16 +20,18 @@ print("Before you begin, please ensure that you've installed the following appli
 print(" ".join(apps) + "\n")
 print("Do you wish to continue? (y/n)")
 
-if(is_yes(input())):
-    # install code goes here
-    
+if is_yes(input()):
     for file in os.listdir("home"):
-        shutil.copytree(os.path.join("home", file), "~")
-        
+        location = os.path.join("home", file)
+        if os.path.isdir(location):
+            shutil.copytree(location, "~")
+            shutil.rmtree(location)
+        else:
+            shutil.move(location, "~")
     # clean up the repo
-    shutil.rmtree(".git")
-
-
+    shutil.rmtree("../linux-config")
+    print("All done!")
+    
 else:
     print("You'll probably want to use one of these to install them, then:")
     print("sudo pacman -S " + " ".join(apps))
