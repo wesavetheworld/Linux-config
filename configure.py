@@ -22,14 +22,16 @@ print("Do you wish to continue? (y/n)")
 
 if(is_yes(input())):
     # install code goes here
-    subprocess.call(["mv", "home/.*", "home/*", "~"])
-
+    
+    for file in os.listdir("home"):
+        shutil.copytree(os.path.join("home", file"), "~")
+        
     # clean up the repo
-    # shutil.rmtree(".git")
+    shutil.rmtree(".git")
 
 
 else:
     print("You'll probably want to use one of these to install them, then:")
     print("sudo pacman -S " + " ".join(apps))
-    print("apt-get install " + " ".join(apps))
-    print("yum install " + " ".join(apps) + "\n")
+    print("sudo apt-get install " + " ".join(apps))
+    print("sudo yum install " + " ".join(apps) + "\n")
