@@ -24,7 +24,7 @@ print("Before you begin, please ensure that you've installed the following appli
 print(" ".join(apps) + "\n")
 print("Do you wish to continue? (y/n)")
 
-if(isYes(raw_input())):
+if(is_yes(raw_input())):
     # install code goes here
     move_recursive("home/*", "~")
     
