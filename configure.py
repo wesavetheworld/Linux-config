@@ -7,9 +7,6 @@ import subprocess
 def is_yes(input):
     lower = input.lower()
     return lower == "y" or lower == "yes"
-    
-def move_recursive(source, destination):
-    call(["mv", source, destination])
 
 
 # field definitions
@@ -25,12 +22,12 @@ print("Do you wish to continue? (y/n)")
 
 if(is_yes(input())):
     # install code goes here
-    move_recursive("home/*", "~")
-    
+    subprocess.call(["mv", "home/.*", "home/*", "~"])
+
     # clean up the repo
-    shutil.rmtree(".git")
-    
-    
+    # shutil.rmtree(".git")
+
+
 else:
     print("You'll probably want to use one of these to install them, then:")
     print("sudo pacman -S " + " ".join(apps))
