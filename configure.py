@@ -23,11 +23,12 @@ print("Do you wish to continue? (y/n)")
 if is_yes(input()):
     for file in os.listdir("home"):
         location = os.path.join("home", file)
-        print("moving " + location + " to ~")
         if os.path.isdir(location):
+            print("moving dir '" + location + "' to ~")
             shutil.copytree(location, "~")
             shutil.rmtree(location)
         else:
+            print("moving file '" + location + "' to ~")
             shutil.move(location, "~")
     # clean up the repo
     shutil.rmtree("../linux-config")
