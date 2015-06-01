@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import shutil
-
+import subprocess
 
 # function definitions
 
@@ -9,8 +9,7 @@ def is_yes(input):
     return lower == "y" or lower == "yes"
     
 def move_recursive(source, destination):
-    shutil.copytree(source, destination)
-    shutil.rmtree(source)
+    call(["mv", source, destination])
 
 
 # field definitions
