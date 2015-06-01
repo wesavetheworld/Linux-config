@@ -31,8 +31,8 @@ if is_yes(input()):
         else:
             print("moving file '" + location + "' to '" + home + "'")
             shutil.move(location, home)
-    # clean up the repo
-    # shutil.rmtree("../linux-config")
+    print("Cleaning up...");
+    shutil.rmtree("../linux-config")
     print("All done!")
     
 else:
