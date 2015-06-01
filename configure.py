@@ -26,7 +26,7 @@ print("Do you wish to continue? (y/n)")
 
 if(isYes(raw_input())):
     # install code goes here
-    move_recursive("home", "~")
+    move_recursive("home/*", "~")
     
     # clean up the repo
     shutil.rmtree(".git")
