@@ -32,7 +32,7 @@ if is_yes(input()):
             print("moving file '" + location + "' to '" + home + "'")
             shutil.move(location, home)
     print("Cleaning up...");
-    shutil.rmtree("../linux-config")
+    shutil.rmtree("../Linux-config")
     print("All done!")
     
 else:
