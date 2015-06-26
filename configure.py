@@ -31,6 +31,17 @@ if is_yes(input()):
         else:
             print("moving file '" + location + "' to '" + home + "'")
             shutil.move(location, home)
+    
+    for file in os.listdir("root"):
+        location = os.path.join("root", file)
+        root = "/"
+        if os.path.isdir(location):
+            print("moving dir '" + location + "' to '" + home + "'")
+            shutil.copytree(location, home)
+            shutil.rmtree(location)
+        else:
+            print("moving file '" + location + "' to '" + home + "'")
+            shutil.move(location, home)
     print("Cleaning up...");
     shutil.rmtree("../linux-config")
     os.chdir("..")
