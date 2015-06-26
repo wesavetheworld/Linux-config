@@ -33,6 +33,7 @@ if is_yes(input()):
             shutil.move(location, home)
     print("Cleaning up...");
     shutil.rmtree("../linux-config")
+    os.chdir("..")
     print("All done!")
     
 else:
