@@ -11,7 +11,7 @@ def is_yes(input):
 
 # field definitions
 
-apps = ["vim", "zsh"]
+apps = ["git", "vim", "zsh"]
 
 
 # configuration script
