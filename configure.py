@@ -36,17 +36,17 @@ for file in os.listdir("home"):
         shutil.move(location, home)
 
 print("User setup complete. Would you like to configure global settings as well? (y/n)")
-    if is_yes(input()):
-        for file in os.listdir("root"):
-            location = os.path.join("root", file)
-            root = "/"
-            if os.path.isdir(location):
-                print("moving dir '" + location + "' to '" + home + "'")
-                shutil.copytree(location, home)
-                shutil.rmtree(location)
-            else:
-                print("moving file '" + location + "' to '" + home + "'")
-                shutil.move(location, home)
+if is_yes(input()):
+    for file in os.listdir("root"):
+        location = os.path.join("root", file)
+        root = "/"
+        if os.path.isdir(location):
+            print("moving dir '" + location + "' to '" + home + "'")
+            shutil.copytree(location, home)
+            shutil.rmtree(location)
+        else:
+            print("moving file '" + location + "' to '" + home + "'")
+            shutil.move(location, home)
 print("Cleaning up...");
 os.chdir("..")
 shutil.rmtree("linux-config")
