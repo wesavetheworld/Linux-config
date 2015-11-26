@@ -20,7 +20,7 @@ apps = ["git", "vim", "zsh"]
 print("Before you begin, please ensure that you've installed the following applications:")
 print(" ".join(apps) + "\n")
 print("Do you wish to continue? (y/n)")
-if !is_yes(input()):
+if not is_yes(input()):
     sys.exit(0)
 
 
