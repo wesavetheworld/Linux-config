@@ -26,6 +26,11 @@ setopt appendhistory
 unsetopt autocd
 bindkey -e
 # End of lines configured by zsh-newuser-install
+# Pkgfile hook
+source /usr/share/doc/pkgfile/command-not-found.zsh
+# tell applications we're using a terminal with colour support
 export TERM=xterm-256color
+# colourise the output of ls
 alias ls="ls --color=always"
+# i don't know what this does anymore, looks important though. don't touch.
 [ -n "$TMUX" ] && export TERM=xterm
