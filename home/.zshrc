@@ -28,6 +28,4 @@ bindkey -e
 # End of lines configured by zsh-newuser-install
 export TERM=xterm-256color
 alias ls="ls --color=always"
-alias vim="sudo vim"
-alias "#"="sudo"
 [ -n "$TMUX" ] && export TERM=xterm
