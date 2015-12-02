@@ -46,7 +46,10 @@ if is_yes(input()):
                 shutil.move(location, home)
     print("Cleaning up...");
     os.chdir("..")
-    shutil.rmtree("Linux-config")
+    try:
+        shutil.rmtree("Linux-config")
+    except FileNotFoundError:
+        shutil.rmtree("linux-config")
     print("All done!")
         
 else:
